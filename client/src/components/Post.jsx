@@ -1,0 +1,55 @@
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from 'react-router-dom';
+import axios from 'axios';
+
+axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.withCredentials = true;
+
+function Post() {
+    const { id } = useParams();
+    const [blog, setBlog] = useState(null);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchBlog = async () => {
+            try {
+                const response = await axios.get(`/blogs/post/${id}`);
+                setBlog(response.data.blog);
+            } catch (error) {
+                console.log(error);
+                setError("Unable to fetch the blog post.");
+            }
+        };                
+        fetchBlog();
+    }, [id]);
+
+    if (error) {
+        return <p>{error}</p>;
+    }
+
+    return (
+        <div className="blog-container">
+            {blog && (
+                <div className="blog-content">
+                    <div className="blog-menu">
+                        <h4 className="title">{blog.title}</h4>
+                        <span className="back">
+                            <Link to="/blog">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" className="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                                    <title>Back</title>
+                                    <path fillRule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                                </svg>
+                            </Link>
+                        </span>
+                    </div>
+                    <p className="small-content">By: {blog.author.username}</p>
+                    <p className="small-content">Date: {new Date(blog.createdAt).toLocaleDateString()}</p>
+                    <p className="content">{blog.content}</p>
+                    {blog.image && <img src={blog.image} alt="Blog" className="blog-image" />}
+                </div>
+            )}
+        </div>
+    );
+}
+
+export default Post;

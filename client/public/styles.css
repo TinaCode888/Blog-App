@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", serif;
+}
+
+body {
+    background-color: rgb(240, 240, 240);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+}
+
+h3 {
+    margin: 18px 0;
+}
+
+header {
+    height: 55px;
+    background-color: rgb(255, 170, 0);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
+}
+
+header h1 {
+    padding: 7px 40px;
+    color: white;
+    font-size: 28px;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.background-image {
+    background-image: url("assets/main.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.main, .login-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main > h2 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.login-container {
+    background: linear-gradient(-15deg, rgb(150, 150, 150) 40%, transparent 60%), linear-gradient(-195deg, rgb(220, 220, 220) 60%, transparent 10%);
+}
+
+.login-container > form {
+    background-color: rgb(255, 165, 0);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container input, .blog-inputs input, textarea {
+    padding: 10px 20px;
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.login-container input, button {
+    margin: 12px 0;
+}
+
+.login-container a {
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.get-started, .login-container button {
+    background-color: rgb(255, 135, 0);
+    color: white;
+    width: 200px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.get-started:hover, .login-container button:hover, .blog-content button:hover {
+    background-color: rgb(255, 180, 45);
+}
+
+.blog-container {
+    width: 70%;
+    margin: 0 auto;
+    word-wrap: break-word;
+}
+
+.blog-content {
+    position: relative;
+    margin: 30px 0;
+    padding: 10px;
+    width: 100%;
+    background-color: antiquewhite;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+}
+
+.blog-inputs {
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-inputs .inputs {
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.20);
+    padding: 5px;
+    margin: 5px;
+    width: 90%;
+}
+
+.blog-inputs label {
+    padding-left: 20px;
+}
+
+.blog-inputs input {
+    border: none;
+}
+
+.blog-content .add-img {
+    width: 45%;
+    margin: 0 auto;
+    border: 1px solid grey;
+    text-align: center;
+}
+
+.blog-content .add-button {
+    height: 40px;
+    width: 40px;
+    background-color: rgb(255, 170, 0);
+    color: white;
+    border: 1px solid rgb(255, 120, 0);
+    border-radius: 100%;
+    position: absolute;
+    top: 73%;
+    left: 87%;
+}
+
+.title, .content {
+    padding: 15px;
+    margin-bottom: 0;
+}
+
+.content {
+    font-size: 14px;
+}
+
+.small-content {
+    margin: 0;
+    font-size: 12px;
+    padding-left: 15px;
+}
+
+.title-menu {
+    margin-top: 10px;
+}
+
+.title-menu, .blog-menu, header h1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-menu > svg, span {
+    margin: 5px 5px 0 0;
+    text-decoration: none;
+}
+
+.blog-menu > .bi-three-dots-vertical, .back{
+    margin: 20px 20px 0 0;
+    cursor: pointer;
+}
+
+.blog-image {
+    max-width: 100%;
+    height: 400px;
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.menu {
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 8%;
+    left: 95%;
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 10;
+}
+
+.menu > li, .li {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    margin: 13px;
+    cursor: pointer;
+}
+
+.menu > li:hover, .li:hover, .bi-pencil-square:hover, .bi-arrow-left-circle:hover {
+    color: rgb(160, 100, 0);
+    text-decoration: underline;
+}
+
+.logout-button {
+    background-color: #ff4d4f;
+    color: white;
+    margin-bottom: 20px;
+    width: 150px;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.logout-button:hover {
+    background-color: #ff7875;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+footer {
+    background-color: rgb(225, 150, 0);
+    color: #ddd;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Responsive styles for screens <= 768px */
+@media (max-width: 768px) {
+    .login-container > form {
+        height: 300px; 
+        width: 280px;
+        padding: 20px;
+    }
+
+    .login-container input, .blog-inputs input, textarea {
+        padding: 5px 15px;
+    }
+
+    .login-container button, .get-started, .logout-button {
+        width: 150px;
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+
+    .login-container a, footer {
+        font-size: 12px;
+    }
+
+    .blog-container {
+        width: 80%;
+    }
+
+    .blog-inputs .inputs, label {
+        font-size: 13px
+    }
+
+    .blog-content .add-button {
+        height: 31px;
+        width: 31px;  
+        position: absolute;
+        top: 75%;
+        left: 88%;      
+    }
+
+    .title-menu > svg, span {
+        margin: 3px 3px 0 0;
+    }
+
+    .blog-image {
+        max-width: 100%;
+        height: 300px;
+    }
+}
+
+/* Responsive styles for screens <= 425px */
+@media (max-width: 425px) {
+    .header h1 {
+        padding: 12px 20px;
+        font-size: 20px;
+    }
+
+    .main > h2 {
+        font-size: 2rem;
+    }
+
+    .login-container > form {
+        height: 280px; 
+        width: 260px;
+        padding: 20px;
+    }
+
+    .login-container input, .blog-inputs input, textarea {
+        padding: 5px 15px;
+    }
+
+    .blog-container {
+        width: 90%;
+    }
+
+    .blog-content .add-button {
+        position: absolute;
+        top: 73%;
+        left: 85%;      
+    }
+
+    .menu {
+        position: absolute;
+        left: 88%;
+    }
+
+    .menu > li {
+        margin: 5px;
+    }
+}
