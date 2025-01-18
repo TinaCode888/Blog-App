@@ -38,15 +38,15 @@ function EditBlog() {
             formData.append("content", blog.content);
             if (blog.image) formData.append("image", blog.image);
 
-            const response = await axios.put(`/blog/edit/${id}`, formData, {
+            const response = await axios.patch(`/blog/edit/${id}`, formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
 
             if (response.data.success) {
-                console.log("Blog updated:", response.data.message);
+                console.log(response.data.message);
                 navigate("/blog/add");
             } else {
-                console.error("Update failed:", response.data.message);
+                alert(response.data.message);
             }
         } catch (err) {
             console.error("Error updating blog:", err);

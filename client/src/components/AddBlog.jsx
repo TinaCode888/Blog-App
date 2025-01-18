@@ -46,10 +46,8 @@ function AddBlog() {
     
             if (response.data.success) {
                 navigate("/blog");
-                console.log(response.data.blogs);
-
+                console.log(response.data.message);
             } else {
-                console.log("Blog not added:", response.data.message);
                 alert(response.data.message);
             }
         } catch (error) {

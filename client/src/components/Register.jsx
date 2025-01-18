@@ -32,7 +32,7 @@ function Register(){
                 navigate("/blog");
                 console.log(response.data.success);
             } else {
-                console.log("Registration failed: ", response.data.message);
+                alert(response.data.message);
             }
         } catch(error) {
             console.error("error: ", error);

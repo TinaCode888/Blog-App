@@ -23,12 +23,11 @@ function Login(){
         event.preventDefault();
         try {
             const response = await axios.post("http://localhost:3001/login", loginData);
-            console.log("data sent successfully!!", response.data);
             if (response.data.success) {
                 navigate("/blog");
-                console.log(response.data.success);
+                console.log(response.data.message);
             } else {
-                console.log("login failed: ", response.data.message);
+                alert(response.data.message);
             }
         } catch(error) {
             console.error("error: ", error);

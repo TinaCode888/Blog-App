@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import DeleteButton from "./DeleteButton";
+import DeleteBlog from "./DeleteBlog";
 
 axios.defaults.baseURL = "http://localhost:3001";
 axios.defaults.withCredentials = true;
@@ -73,7 +73,7 @@ function UserBlogs() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <DeleteButton delId={blog._id} refetch={fetchUserBlogs} />
+                                    <DeleteBlog delId={blog._id} refetch={fetchUserBlogs} />
                                 </li>
                             </ul>
                         )}

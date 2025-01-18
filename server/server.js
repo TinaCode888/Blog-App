@@ -154,7 +154,7 @@ app.post("/blog/add", upload.single("image"), (req, res) => {
         .catch(err => res.json({ success: false, message: "Failed to create blog." }));
 });
 
-app.put("/blog/edit/:id", upload.single("image"), async (req, res) => {
+app.patch("/blog/edit/:id", upload.single("image"), async (req, res) => {
     const { id } = req.params;
     const { title, content } = req.body;
     const imagePath = req.file ? `/uploads/${req.file.filename}` : undefined;
@@ -188,8 +188,8 @@ app.put("/blog/edit/:id", upload.single("image"), async (req, res) => {
     }
 });
 
-app.post("/blog/delete", async (req, res) => {
-    const { id } = req.body;
+app.delete("/blog/delete/:id", async (req, res) => {
+    const { id } = req.params;
 
     try {
         const blog = await Blog.findById(id);
@@ -205,6 +205,7 @@ app.post("/blog/delete", async (req, res) => {
             res.json({ success: false, message: "Blog not found." });
         }
     } catch (err) {
+        console.error("Error deleting the blog:", err);
         res.json({ success: false, message: "Blog deletion failed." });
     }
 });
